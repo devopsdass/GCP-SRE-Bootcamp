@@ -1,0 +1,17 @@
+# [START container_nginxapp_service_load_balancer]
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-web-server
+  labels:
+    app: nginx
+    tier: web
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: nginx
+    tier: web
+# [END container_nginxapp_service_load_balancer]
