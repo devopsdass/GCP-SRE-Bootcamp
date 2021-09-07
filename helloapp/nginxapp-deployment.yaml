@@ -1,0 +1,25 @@
+# [START container_nginxapp_deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-web-server
+  labels:
+    app: nginx
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx-web
+        image: gcr.io/ambient-stone-323905/my-web-server-v2@sha256:79acaa95c1984c9ee08c855f2d7f59b8064c1d5244f935da494bb3a832e8d5c3
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: "250m"
+# [END container_nginxapp_deployment]  
