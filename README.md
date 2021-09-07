@@ -1,2 +1,2 @@
-# sre-bookcamp-gp
+# GCP-SRE-Bookcamp
 sre-bookcamp-gp - testing
